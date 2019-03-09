@@ -1,0 +1,66 @@
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var alsatian_cli_options_1 = require("../../../../cli/alsatian-cli-options");
+var duplicate_cli_argument_error_1 = require("../../../../cli/errors/duplicate-cli-argument-error");
+var alsatian_core_1 = require("../../../../core/alsatian-core");
+var HelpRequestedTests = /** @class */ (function () {
+    function HelpRequestedTests() {
+    }
+    HelpRequestedTests.prototype.helpRequestedDefaultsToFalse = function () {
+        var options = new alsatian_cli_options_1.AlsatianCliOptions([]);
+        alsatian_core_1.Expect(options.helpRequested).toBe(false);
+    };
+    HelpRequestedTests.prototype.helpRequestedIfCalled = function (argument) {
+        var options = new alsatian_cli_options_1.AlsatianCliOptions([argument]);
+        alsatian_core_1.Expect(options.helpRequested).toBe(true);
+    };
+    HelpRequestedTests.prototype.duplicateTapArgumentsThrowsError = function (firstArgument, secondArgument) {
+        alsatian_core_1.Expect(function () {
+            var options = new alsatian_cli_options_1.AlsatianCliOptions([firstArgument, secondArgument]);
+        }).toThrowError(duplicate_cli_argument_error_1.DuplicateCliArgumentError, 'Duplicate "help" arguments were provided.');
+    };
+    HelpRequestedTests.prototype.helpRequestedVeforeOrAfterGlobIsTrue = function (firstArgument, secondArgument) {
+        var options = new alsatian_cli_options_1.AlsatianCliOptions([firstArgument, secondArgument]);
+        alsatian_core_1.Expect(options.helpRequested).toBe(true);
+    };
+    __decorate([
+        alsatian_core_1.Test(),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], HelpRequestedTests.prototype, "helpRequestedDefaultsToFalse", null);
+    __decorate([
+        alsatian_core_1.TestCase("--help"),
+        alsatian_core_1.TestCase("-h"),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [String]),
+        __metadata("design:returntype", void 0)
+    ], HelpRequestedTests.prototype, "helpRequestedIfCalled", null);
+    __decorate([
+        alsatian_core_1.TestCase("--help", "-h"),
+        alsatian_core_1.TestCase("--help", "--help"),
+        alsatian_core_1.TestCase("-h", "-h"),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [String, String]),
+        __metadata("design:returntype", void 0)
+    ], HelpRequestedTests.prototype, "duplicateTapArgumentsThrowsError", null);
+    __decorate([
+        alsatian_core_1.TestCase("--help", "/test/location.spec.js"),
+        alsatian_core_1.TestCase("/another/set/of/**/*.spec.js", "-h"),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [String, String]),
+        __metadata("design:returntype", void 0)
+    ], HelpRequestedTests.prototype, "helpRequestedVeforeOrAfterGlobIsTrue", null);
+    return HelpRequestedTests;
+}());
+exports.HelpRequestedTests = HelpRequestedTests;
+//# sourceMappingURL=help-requested-option.spec.js.map

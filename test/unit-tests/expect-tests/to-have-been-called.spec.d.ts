@@ -1,0 +1,30 @@
+export declare class ToHaveBeenCalledTests {
+    functionCalledPasses(): void;
+    functionNotCalledFails(): void;
+    functionNotCalledFailsWithCorrectError(): void;
+    functionNotCalledPassesWhenShouldNotCall(): void;
+    functionThrowsErrorFailsWhenShouldNotThrow(): void;
+    functionThrowsErrorFailsWithCorrectError(): void;
+    checkingWhetherNonFunctionSpyOrSpiedOnFunctionHasBeenCalledShouldThrow(actualValue: any): void;
+    checkingWhetherNonFunctionSpyOrSpiedOnFunctionHasNotBeenCalledShouldThrow(actualValue: any): void;
+    actualValueAndShouldMatchShouldBeSetToFunctionWasNotCalled(): void;
+    actualValueAndShouldNotMatchShouldBeSetToFunctionWasCalled(): void;
+    expectedValueAndShouldMatchShouldBeSetToFunctionToBeCalled(): void;
+    expectedValueAndShouldNotMatchShouldBeSetToFunctionNotToBeCalled(): void;
+    spyCalledCorrectAmountOfTimesDoesNotThrow(callCount: number): void;
+    spyCalledCorrectAmountOfTimesThrowsCorrectError(expectedCallCount: number, actualCallCount: number): void;
+    spyCalledCorrectAmountOfTimesThrowsCorrectErrorExpectedValue(expectedCallCount: number, actualCallCount: number): void;
+    spyCalledCorrectAmountOfTimesThrowsCorrectErrorActualValue(expectedCallCount: number, actualCallCount: number): void;
+    spyNotCalledCorrectAmountOfTimesDoesNotThrow(expectedCallCount: number, actualCallCount: number): void;
+    spyCalledCorrectAmountOfTimesButShouldNotThrowsCorrectError(callCount: number): void;
+    spyCalledCorrectAmountOfTimesButShouldNotThrowsCorrectErrorExpectedValue(callCount: number): void;
+    spyCalledCorrectAmountOfTimesButShouldNotThrowsCorrectErrorActualValue(callCount: number): void;
+    spyCalledGreaterThanMinimumTimesDoesNotThrow(minimumCallCount: number, actualCallCount: number): void;
+    spyCalledNotGreaterThanMinimumTimesThrowsCorrectError(minimumCallCount: number, actualCallCount: number): void;
+    spyCalledNotGreaterThanMinimumTimesThrowsCorrectErrorExpectedValue(minimumCallCount: number, actualCallCount: number): void;
+    spyCalledNotGreaterThanMinimumTimesThrowsCorrectErrorActualValue(minimumCallCount: number, actualCallCount: number): void;
+    spyNotCalledLessThanMaximumTimesDoesNotThrow(maximumCallCount: number, actualCallCount: number): void;
+    spyCalledGreaterThanMaximumTimesButShouldNotThrowsCorrectError(maximumCallCount: number, actualCallCount: number): void;
+    spyCalledGreaterThanMaximumTimesButShouldNotThrowsCorrectErrorExpectedValue(maximumCallCount: number, actualCallCount: number): void;
+    spyCalledGreaterThanMaximumTimesButShouldNotThrowsCorrectErrorActualValue(maximumCallCount: number, actualCallCount: number): void;
+}

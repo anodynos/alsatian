@@ -1,0 +1,1 @@
+{"version":3,"file":"create-function-spy.js","sourceRoot":"","sources":["create-function-spy.ts"],"names":[],"mappings":";;AAAA,+CAA6C;AAC7C,+DAA4D;AAG5D;IAIE,IAAM,WAAW,GAAG,IAAI,0BAAW,EAAE,CAAC;IAEtC,IAAM,aAAa,GAAG,WAAW,CAAC,IAAI,CAAC,IAAI,CAAC,WAAW,CAAC,CAAC;IAEzD,yCAAkB,CAAC,aAAa,EAAE,WAAW,CAAC,CAAC;IAE/C,OAAO,aAAa,CAAC;AACvB,CAAC;AAXD,8CAWC"}
